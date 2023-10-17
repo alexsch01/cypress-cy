@@ -12,7 +12,7 @@ if ( $args[0] -eq 'ntlm' ) {
 		npx cypress run --browser chrome @($args[1..$cyEnd])
 	} else {
 		if ( $args[0] -eq 'open' ) {
-			npx cypress run --browser chrome --headed --no-exit $($args[1..$cyEnd])
+			npx cypress run --browser chrome --headed --no-exit @($args[1..$cyEnd])
 		}
 	}
 }
