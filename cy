@@ -1,0 +1,18 @@
+if [ "$1" = "ntlm" ]
+then
+	if [ "$2" = "run" ]
+	then
+		npx cypress-ntlm run --browser chrome "${@:3}"
+	elif [ "$2" = "open" ]
+	then
+		npx cypress-ntlm run --browser chrome --headed --no-exit "${@:3}"
+	fi
+else
+	if [ "$1" = "run" ]
+	then
+		npx cypress run --browser chrome "${@:2}"
+	elif [ "$1" = "open" ]
+	then
+		npx cypress run --browser chrome --headed --no-exit "${@:2}"
+	fi
+fi
