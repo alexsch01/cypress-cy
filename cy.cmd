@@ -11,14 +11,12 @@ if "%1" == "ntlm" (
 			npx cypress-ntlm run --browser chrome --headed --no-exit %ALL_BUT_SECOND%
 		)
 	)
+) else if "%1" == "run" (
+	npx cypress run --browser chrome %ALL_BUT_FIRST%
+) else if "%1" == "open" (
+	npx cypress run --browser chrome --headed --no-exit %ALL_BUT_FIRST%
 ) else (
-	if "%1" == "run" (
-		npx cypress run --browser chrome %ALL_BUT_FIRST%
-	) else (
-		if "%1" == "open" (
-			npx cypress run --browser chrome --headed --no-exit %ALL_BUT_FIRST%
-		)
-	)
+	npx cypress %*
 )
 
 @echo on
