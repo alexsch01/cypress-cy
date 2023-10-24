@@ -12,14 +12,10 @@ if(process.platform == 'win32') {
   fs.writeFileSync(outputPathSH, fs.readFileSync(inputPathSH))
   fs.writeFileSync(outputPathCMD, fs.readFileSync(inputPathCMD))
 } else {
-  let outputPathSH
-  if(!process.env.npm_config_global) {
-    outputPathSH = path.resolve(__dirname, '..', '..', '..', 'cy')
-  } else {
-    outputPathSH = path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'cy')
-    if(!fs.existsSync(path.resolve(outputPathSH, '..', 'bin'))) {
-      fs.mkdirSync(path.resolve(outputPathSH, '..', 'bin'))
-    }
+  const outputPathSH = path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'cy')
+
+  if(!fs.existsSync(path.resolve(outputPathSH, '..', 'bin'))) {
+    fs.mkdirSync(path.resolve(outputPathSH, '..', 'bin'))
   }
 
   fs.writeFileSync(outputPathSH, fs.readFileSync(inputPathSH))
