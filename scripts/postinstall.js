@@ -1,13 +1,24 @@
 const fs = require('fs')
 const path = require('path')
+const { execSync } = require('child_process')
+
+const inputPathSH = path.resolve(__dirname, '..', 'bin', 'cy')
+const inputPathCMD = path.resolve(__dirname, '..', 'bin', 'cy.cmd')
 
 if(process.platform == 'win32') {
-  fs.writeFileSync(path.resolve(__dirname, '..', '..', '..', 'cy'), fs.readFileSync(path.resolve(__dirname, '..', 'bin', 'cy')))
-  fs.writeFileSync(path.resolve(__dirname, '..', '..', '..', 'cy.cmd'), fs.readFileSync(path.resolve(__dirname, '..', 'bin', 'cy.cmd')))
+  const outputPathSH = path.resolve(__dirname, '..', '..', '..', 'cy')
+  const outputPathCMD = path.resolve(__dirname, '..', '..', '..', 'cy.cmd')
+  
+  fs.writeFileSync(outputPathSH, fs.readFileSync(inputPathSH))
+  fs.writeFileSync(outputPathCMD, fs.readFileSync(inputPathCMD))
 } else {
+  let outputPathSH
   if(!process.env.npm_config_global) {
-    fs.writeFileSync(path.resolve(__dirname, '..', '..', '..', 'cy'), fs.readFileSync(path.resolve(__dirname, '..', 'bin', 'cy')))
+    outputPathSH = path.resolve(__dirname, '..', '..', '..', 'cy')
   } else {
-    fs.writeFileSync(path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'cy'), fs.readFileSync(path.resolve(__dirname, '..', 'bin', 'cy')))
+    outputPathSH = path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'cy')
   }
+
+  fs.writeFileSync(outputPathSH, fs.readFileSync(inputPathSH))
+  execSync(`chmod +x ${outputPathSH}`)
 }
