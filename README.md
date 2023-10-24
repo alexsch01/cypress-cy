@@ -27,3 +27,8 @@ npm install -g cypress-cy
 ```
 npm uninstall -g cypress-cy
 ```
+
+*****
+In the Global NPM folder, delete 2 files: cmd and cmd.cmd
+*****
+```
