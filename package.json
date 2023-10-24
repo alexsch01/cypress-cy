@@ -2,8 +2,8 @@
     "name": "cypress-cy",
     "version": "1.0.0",
     "description": "Run Cypress with less typing",
-    "bin": {
-        "cy": "bin/cy"
+    "scripts": {
+        "postinstall": "node scripts/postinstall.js"
     },
     "author": "alexsch01",
     "license": "MIT",
