@@ -1,0 +1,14 @@
+{
+    "name": "cypress-cy",
+    "version": "1.0.0",
+    "description": "Run Cypress with less typing",
+    "bin": {
+        "cy": "bin/cy"
+    },
+    "author": "alexsch01",
+    "license": "MIT",
+    "keywords": [
+        "cypress",
+        "cy"
+    ]
+}
