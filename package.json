@@ -3,7 +3,7 @@
     "version": "1.0.5",
     "description": "Run Cypress with less typing",
     "scripts": {
-        "preinstall": "node scripts/preinstall.js"
+        "preinstall": "node scripts/preinstall.js",
         "postinstall": "node scripts/postinstall.js"
     },
     "author": "alexsch01",
