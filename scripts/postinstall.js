@@ -19,6 +19,10 @@ if(process.platform == 'win32') {
     outputPathSH = path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'cy')
   }
 
+  if(!fs.existsSync(outputPathSH)) {
+    fs.mkdirSync(outputPathSH)
+  }
+
   fs.writeFileSync(outputPathSH, fs.readFileSync(inputPathSH))
   execSync(`chmod +x ${outputPathSH}`)
 }
