@@ -28,6 +28,8 @@ npm install -g cypress-cy
 npm uninstall -g cypress-cy
 
 *****
-In the Global NPM folder, delete 2 files: cy and cy.cmd
+In the Global NPM folder, delete:
+- On Windows: "cy", "cy.cmd", and "cy.ps1"
+- Otherwise: "cy"
 *****
 ```
