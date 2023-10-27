@@ -3,8 +3,6 @@
 for /f "tokens=1,* delims= " %%a in ("%*") do set ALL_BUT_FIRST=%%b
 for /f "tokens=1,* delims= " %%a in ("%ALL_BUT_FIRST%") do set ALL_BUT_SECOND=%%b
 
-title &
-
 if "%1" == "ntlm" (
 	if "%2" == "run" (
 		npx cypress-ntlm run --browser chrome %ALL_BUT_SECOND%
