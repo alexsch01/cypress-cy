@@ -16,7 +16,7 @@ if "%1" == "ntlm" (
 ) else if "%1" == "open" (
 	.\node_modules\.bin\cypress run --browser chrome --headed --no-exit %ALL_BUT_FIRST%
 ) else (
-	.\node_modules\.bin\cypress %*
+	npx cypress %*
 )
 
 @echo on
