@@ -1,6 +1,6 @@
 {
     "name": "cypress-cy",
-    "version": "1.3.2",
+    "version": "1.4.0",
     "description": "Run Cypress with less typing",
     "scripts": {
         "preinstall": "node scripts/preinstall.js",
