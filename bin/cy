@@ -14,5 +14,5 @@ elif [ "$1" = "open" ]
 then
         ./node_modules/.bin/cypress run --browser chrome --headed --no-exit "${@:2}"
 else
-        ./node_modules/.bin/cypress $*
+        npx cypress $*
 fi
