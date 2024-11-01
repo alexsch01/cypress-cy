@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if [ "$1" = "ntlm" ]
 then
         if [ "$2" = "run" ]
