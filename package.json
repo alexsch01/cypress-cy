@@ -1,0 +1,15 @@
+{
+    "name": "cypress-cy",
+    "version": "1.5.1",
+    "description": "Run Cypress with less typing",
+    "scripts": {
+        "preinstall": "node scripts/preinstall.js",
+        "postinstall": "node scripts/postinstall.js"
+    },
+    "author": "alexsch01",
+    "license": "MIT",
+    "keywords": [
+        "cypress",
+        "cy"
+    ]
+}
