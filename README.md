@@ -14,13 +14,13 @@ npm install -g cypress-cy
 
 #### Examples
 
-`cy run      ` npx cypress run --browser chrome
+`cy run      ` npx cypress run
 
-`cy open     ` npx cypress run --browser chrome --headed --no-exit
+`cy open     ` npx cypress run --headed --no-exit
 
-`cy ntlm run ` npx cypress-ntlm run --browser chrome
+`cy ntlm run ` npx cypress-ntlm run
 
-`cy ntlm open` npx cypress-ntlm run --browser chrome --headed --no-exit
+`cy ntlm open` npx cypress-ntlm run --headed --no-exit
 
 #### How To Uninstall
 
